@@ -1,0 +1,13 @@
+Unseen-Attack Detection in the Internet of Medical Things -- Third-party notices
+============================================================================
+
+Dataset
+-------
+CICIoMT2024 is provided by the Canadian Institute for Cybersecurity (CIC).
+See https://www.unb.ca/cic/datasets/iomt-dataset-2024.html and the dataset paper (Internet of Things 28, 101351, DOI 10.1016/j.iot.2024.101351). The raw data are not redistributed.
+
+Dependencies
+------------
+This software uses PyTorch, scikit-learn, NumPy, pandas, SciPy, and
+Matplotlib. Each package carries its own licence.
+See requirements.txt for the exact versions used.
