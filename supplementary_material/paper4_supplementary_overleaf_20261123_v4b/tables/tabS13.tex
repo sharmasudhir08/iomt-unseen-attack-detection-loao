@@ -1,0 +1,40 @@
+\begin{table}[!htbp]
+\centering\scriptsize
+\caption{Block bootstrap and flood sub-clusters (exploratory; no verdict). Panel A: block bootstrap for the two flood classes (2,000 resamples; seeds, the 20 known-class test files and blocks of 1,000, 250 or 4,000 consecutive held-out windows are resampled) next to the published 10,000-resample seed-level intervals; the held-out windows of each class come from a single test file, so dependence between capture files cannot be estimated. For ARP spoofing, Recon-VulScan and malformed MQTT traffic the held-out file is too short for a reliable block bootstrap and no interval is given. Panel B: k-means sub-clusters ($k = 2$ to 5, five seeds) of the held-out flood windows: mean silhouette, and the energy-score AUROC of each sub-cluster pooled over seeds and $k$ (min to max, window-weighted mean, share of sub-clusters below 0.5).}\label{tab:S13}
+\textbf{Panel A}\par\smallskip
+\fit{%
+\begin{tabular}{llrcccc}
+\toprule
+Held-out class & Quantity & Mean & Published seed-level 95\% CI & Block, 1,000 & Block, 250 & Block, 4,000 \\
+\midrule
+TCP/IP DoS-UDP & H1 caught-any, TRACE-MoE & 1.0000 & [1.0000, 1.0000] & [1.0000, 1.0000] & [1.0000, 1.0000] & [1.0000, 1.0000] \\
+TCP/IP DoS-UDP & H5 PCRP AUROC & 0.9513 & [0.9314, 0.9712] & [0.8860, 0.9978] & [0.8861, 0.9977] & [0.8864, 0.9978] \\
+TCP/IP DoS-UDP & H2 energy minus MSP, TRACE-MoE & $-$0.1286 & [$-$0.2563, $-$0.0238] & [$-$0.3147, +0.0445] & [$-$0.3145, +0.0446] & [$-$0.3148, +0.0446] \\
+TCP/IP DoS-UDP & H2 energy minus MSP, Transformer & +0.0888 & [+0.0010, +0.2091] & [$-$0.0094, +0.2540] & [$-$0.0095, +0.2539] & [$-$0.0093, +0.2543] \\
+TCP/IP DoS-UDP & H2 energy minus MSP, BiLSTM-DNN & $-$0.0775 & [$-$0.2272, +0.0714] & [$-$0.3235, +0.1391] & [$-$0.3236, +0.1386] & [$-$0.3245, +0.1389] \\
+\midrule
+MQTT-DDoS publish flooding & H1 caught-any, TRACE-MoE & 1.0000 & [0.9999, 1.0000] & [0.9999, 1.0000] & [0.9999, 1.0000] & [0.9999, 1.0000] \\
+MQTT-DDoS publish flooding & H5 PCRP AUROC & 0.9361 & [0.9360, 0.9363] & [0.8842, 0.9718] & [0.8838, 0.9716] & [0.8838, 0.9717] \\
+MQTT-DDoS publish flooding & H2 energy minus MSP, TRACE-MoE & $-$0.0537 & [$-$0.1933, +0.0858] & [$-$0.2269, +0.1302] & [$-$0.2272, +0.1316] & [$-$0.2252, +0.1310] \\
+MQTT-DDoS publish flooding & H2 energy minus MSP, Transformer & $-$0.1811 & [$-$0.2938, $-$0.0684] & [$-$0.3686, $-$0.0485] & [$-$0.3632, $-$0.0489] & [$-$0.3647, $-$0.0486] \\
+MQTT-DDoS publish flooding & H2 energy minus MSP, BiLSTM-DNN & $-$0.1082 & [$-$0.2703, +0.0540] & [$-$0.2934, +0.0791] & [$-$0.2925, +0.0800] & [$-$0.2929, +0.0810] \\
+\bottomrule
+\end{tabular}
+}
+\par\medskip\textbf{Panel B}\par\smallskip
+\fit{%
+\begin{tabular}{llrrrrcrr}
+\toprule
+Held-out class & Model & Silhouette $k{=}2$ & $k{=}3$ & $k{=}4$ & $k{=}5$ & Energy AUROC per sub-cluster (min to max) & Window-weighted mean & Below 0.5 \\
+\midrule
+TCP/IP DoS-UDP & TRACE-MoE & 0.853 & 0.445 & 0.456 & 0.464 & 0.010 to 0.747 & 0.314 & 80\% \\
+TCP/IP DoS-UDP & Transformer & 0.853 & 0.445 & 0.456 & 0.464 & 0.353 to 0.889 & 0.667 & 20\% \\
+TCP/IP DoS-UDP & BiLSTM-DNN & 0.853 & 0.445 & 0.456 & 0.464 & 0.459 to 0.989 & 0.665 & 34\% \\
+\midrule
+MQTT-DDoS publish flooding & TRACE-MoE & 0.366 & 0.331 & 0.362 & 0.321 & 0.026 to 0.840 & 0.326 & 81\% \\
+MQTT-DDoS publish flooding & Transformer & 0.366 & 0.331 & 0.362 & 0.321 & 0.003 to 0.771 & 0.116 & 89\% \\
+MQTT-DDoS publish flooding & BiLSTM-DNN & 0.366 & 0.331 & 0.362 & 0.321 & 0.028 to 0.997 & 0.334 & 69\% \\
+\bottomrule
+\end{tabular}
+}
+\end{table}

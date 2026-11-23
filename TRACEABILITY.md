@@ -54,7 +54,7 @@ Numbers in the prose were checked on 21 November in two manual audits (about 60 
 | Further open-set scores (ESA3) | `supplementary_analyses/T3/`, `supplementary_analyses/part2/U10/`, `part2/U2/`, `part2/pooled_table_for_manuscript.csv` |
 | Absorption of held-out windows by closely related classes | `supplementary_analyses/part2/U1/absorption_19.csv` |
 | Parameter counts, checkpoint sizes, FLOPs | `results_v3_paper3/zero_day/<run>/metrics.json` and `model.pt` sizes (not in this repository), `supplementary_analyses/T8/` |
-| Inference timing | `results_v3_paper3/inference_benchmark_20261118/` (not in this repository; summary in the manuscript) |
+| Inference timing | `supplementary_analyses/from_20261118/inference_benchmark/` |
 
 ## 5. Supplementary analyses
 
@@ -97,7 +97,6 @@ All are post hoc and exploratory; none changes a verdict. Task folders under `su
 ## 7. Not covered
 
 - Each held-out class has one test file; a file-level cluster bootstrap is undefined (see `supplementary_analyses/T6/`).
-- The device-level audit of the raw files was not done (T7 not approved).
 - Training runs themselves are not reproduced here. The hypotheses, decision rules and timeline are in `ANALYSIS_PLAN.md`.
 
 ## 8. Files held back from `results/`

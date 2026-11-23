@@ -1,0 +1,52 @@
+{
+  "date": "2026-11-18 13:29:46",
+  "python": "3.12.4",
+  "torch": "2.5.1+cu121",
+  "cuda": "12.1",
+  "gpu": "NVIDIA GeForce RTX 3050 Laptop GPU",
+  "platform": "Windows-11-10.0.26300-SP0",
+  "amp": true,
+  "params": {
+    "bilstm_dnn": 70811,
+    "transformer": 308251,
+    "trace_moe": 685041
+  },
+  "ac_power_start": true,
+  "gpu_state_start": {
+    "clocks.sm": "1740",
+    "clocks.max.sm": "2100",
+    "power.draw": "16.32",
+    "temperature.gpu": "53",
+    "utilization.gpu": "5",
+    "memory.used": "85"
+  },
+  "rounds": 5,
+  "input_modes": [
+    "real",
+    "synthetic"
+  ],
+  "weights_from": "{m}_loao_T16_ARP_Spoofing_seed42",
+  "trace_moe_expert_counts_first_4096": {
+    "real": [
+      653,
+      2718,
+      444,
+      281
+    ],
+    "synthetic": [
+      3385,
+      520,
+      113,
+      78
+    ]
+  },
+  "gpu_state_end": {
+    "clocks.sm": "210",
+    "clocks.max.sm": "2100",
+    "power.draw": "4.27",
+    "temperature.gpu": "51",
+    "utilization.gpu": "0",
+    "memory.used": "475"
+  },
+  "ac_power_end": true
+}

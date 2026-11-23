@@ -1,0 +1,33 @@
+\begin{table}[!htbp]
+\centering\footnotesize
+\caption{Training configuration shared by all 75 leave-one-attack-out runs (descriptive setup facts). The values are read from the configuration file stored with each run; the three architectures differ only in the model block.}\label{tab:S1}
+\fit{%
+\begin{tabular}{p{7.6cm}p{6.6cm}l}
+\toprule
+Setting & Value & Source \\
+\midrule
+Optimizer & AdamW & src/trace\_iomt/train.py \\
+Learning-rate schedule & cosine annealing over the epoch budget & src/trace\_iomt/train.py \\
+Learning rate & 0.001 & config.json \\
+Weight decay & 0.0001 & config.json \\
+Epoch budget / early-stopping patience & 50 / 10 (validation macro-F1 of the 19-class head) & config.json \\
+Batch size & 256 & config.json \\
+Dropout & 0.2 & config.json \\
+Gradient-norm clipping & 1 & config.json \\
+Mixed precision & yes & config.json \\
+Working dimension / attention heads / encoder layers / feed-forward width (TRACE-MoE, Transformer) & 128 / 4 / 2 / 256 & config.json \\
+TRACE-MoE experts / routing / load-balancing weight & 4 / top-1 learned / 0.01 & config.json \\
+Loss & logit-adjusted focal loss, $\gamma = 1$, $\tau = 1$ & config.json \\
+Head weights (2-, 6-, 19-class) & 0.5, 0.5, 1 & config.json \\
+Consistency weight & 0.1 & config.json \\
+Window length / stride (train, validation, test) & 16 / 8, 16, 1 & config.json \\
+Training windows per class per epoch (maximum); small classes oversampled & 60,000; yes & config.json \\
+Validation split & last 15\% of each training file (temporal tail hold-out) & config.json \\
+Feature scaling & robust (median and interquartile range), clipped to $[-10, 10]$ & config.json \\
+Duplicate training windows & removed & config.json \\
+Abstention target coverage & 0.95 & config.json \\
+Seeds & 42, 43, 44, 45, 46 & config.json \\
+\bottomrule
+\end{tabular}
+}
+\end{table}

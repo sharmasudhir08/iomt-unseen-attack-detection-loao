@@ -1,0 +1,33 @@
+\begin{table}[!htbp]
+\centering\footnotesize
+\caption{Calibration and risk-coverage (exploratory; no verdict; mean over five seeds). ECE: expected calibration error of the known test windows with 15 equal-width confidence bins, for the 19-class head and the binary head. AURC: area under the risk-coverage curve when windows are accepted in order of increasing unknown score (energy or MSP); held-out windows and misclassified known windows count as errors; lower is better.}\label{tab:S12}
+\fit{%
+\begin{tabular}{llrrrr}
+\toprule
+Model & Held-out class & ECE, 19-class & ECE, binary & AURC, energy & AURC, MSP \\
+\midrule
+TRACE-MoE & ARP spoofing & 0.0080 & 0.0008 & 0.0066 & 0.0298 \\
+TRACE-MoE & Recon-VulScan & 0.0086 & 0.0010 & 0.0068 & 0.0294 \\
+TRACE-MoE & Malformed MQTT traffic & 0.0090 & 0.0009 & 0.0085 & 0.0289 \\
+TRACE-MoE & TCP/IP DoS-UDP & 0.0093 & 0.0019 & 0.1371 & 0.0768 \\
+TRACE-MoE & MQTT-DDoS publish flooding & 0.0047 & 0.0015 & 0.0092 & 0.0313 \\
+\midrule
+Transformer & ARP spoofing & 0.0063 & 0.0010 & 0.0258 & 0.0190 \\
+Transformer & Recon-VulScan & 0.0077 & 0.0017 & 0.0151 & 0.0100 \\
+Transformer & Malformed MQTT traffic & 0.0077 & 0.0017 & 0.0220 & 0.0162 \\
+Transformer & TCP/IP DoS-UDP & 0.0077 & 0.0018 & 0.0636 & 0.0675 \\
+Transformer & MQTT-DDoS publish flooding & 0.0059 & 0.0024 & 0.0198 & 0.0129 \\
+\midrule
+BiLSTM-DNN & ARP spoofing & 0.0150 & 0.0017 & 0.0164 & 0.0199 \\
+BiLSTM-DNN & Recon-VulScan & 0.0171 & 0.0024 & 0.0199 & 0.0181 \\
+BiLSTM-DNN & Malformed MQTT traffic & 0.0169 & 0.0020 & 0.0188 & 0.0176 \\
+BiLSTM-DNN & TCP/IP DoS-UDP & 0.0186 & 0.0024 & 0.0572 & 0.0413 \\
+BiLSTM-DNN & MQTT-DDoS publish flooding & 0.0126 & 0.0025 & 0.0170 & 0.0257 \\
+\midrule
+TRACE-MoE & all classes & 0.0079 & 0.0012 & 0.0336 & 0.0392 \\
+Transformer & all classes & 0.0071 & 0.0017 & 0.0293 & 0.0251 \\
+BiLSTM-DNN & all classes & 0.0160 & 0.0022 & 0.0259 & 0.0245 \\
+\bottomrule
+\end{tabular}
+}
+\end{table}

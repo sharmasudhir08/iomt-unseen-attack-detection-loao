@@ -1,0 +1,6 @@
+held_out_class,n_heldout_files,n_known_files,n_blocks_L1000,n_blocks_L250,n_blocks_L4000,n_heldout_windows_seed42
+ARP_Spoofing,1,20,2,7,1,1729
+Recon-VulScan,1,20,2,5,1,1016
+MQTT-Malformed_Data,1,20,2,7,1,1732
+TCP_IP-DoS-UDP,1,20,138,551,35,137538
+MQTT-DDoS-Publish_Flood,1,20,9,34,3,8401

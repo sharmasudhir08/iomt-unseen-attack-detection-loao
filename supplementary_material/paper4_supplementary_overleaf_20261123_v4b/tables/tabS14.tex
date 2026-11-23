@@ -1,0 +1,30 @@
+\begin{table}[!htbp]
+\centering\footnotesize
+\caption{Energy and MSP of the 2-, 6- and 19-class heads as unknown-attack scores (exploratory; no verdict): AUROC for separating held-out windows from known-class test windows, per architecture and held-out class (mean over five seeds), from float32 head outputs of the saved models; the column labels give the score and the head (for example MSP 6 is the MSP of the 6-class head, Energy 19 the reference). The paired difference to the 19-class energy AUROC is given in parentheses.}\label{tab:S14}
+\fit{%
+\begin{tabular}{llrrrrrr}
+\toprule
+Model & Held-out class & Energy 19 & MSP 19 & MSP 6 & MSP 2 & Energy 6 & Energy 2 \\
+\midrule
+TRACE-MoE & ARP spoofing & 0.966 & 0.969$^{\dagger}$ (+0.003) & 0.933$^{\dagger}$ ($-$0.032) & 0.949$^{\dagger}$ ($-$0.017) & 0.969 (+0.004) & 0.971 (+0.005) \\
+TRACE-MoE & Recon-VulScan & 0.969 & 0.971$^{\dagger}$ (+0.002) & 0.884$^{\dagger}$ ($-$0.085$^{*}$) & 0.816$^{\dagger}$ ($-$0.154$^{*}$) & 0.976 (+0.007$^{*}$) & 0.908 ($-$0.061$^{*}$) \\
+TRACE-MoE & Malformed MQTT traffic & 0.981 & 0.982$^{\dagger}$ (+0.001) & 0.975$^{\dagger}$ ($-$0.006) & 0.975$^{\dagger}$ ($-$0.006) & 0.988 (+0.007$^{*}$) & 0.986 (+0.005) \\
+TRACE-MoE & TCP/IP DoS-UDP & 0.314 & 0.442$^{\dagger}$ (+0.129$^{*}$) & 0.372$^{\dagger}$ (+0.058) & 0.454$^{\dagger}$ (+0.141) & 0.339 (+0.025$^{*}$) & 0.538 (+0.225$^{*}$) \\
+TRACE-MoE & MQTT-DDoS publish flooding & 0.326 & 0.379$^{\dagger}$ (+0.054) & 0.387$^{\dagger}$ (+0.061) & 0.494$^{\dagger}$ (+0.168$^{*}$) & 0.398 (+0.072) & 0.308 ($-$0.018) \\
+\midrule
+Transformer & ARP spoofing & 0.982 & 0.961 ($-$0.021$^{*}$) & 0.978 ($-$0.004) & 0.989 (+0.007$^{*}$) & 0.987 (+0.005) & 0.989 (+0.007$^{*}$) \\
+Transformer & Recon-VulScan & 0.974 & 0.934 ($-$0.040$^{*}$) & 0.877 ($-$0.098$^{*}$) & 0.859 ($-$0.115$^{*}$) & 0.976 (+0.002) & 0.848 ($-$0.126$^{*}$) \\
+Transformer & Malformed MQTT traffic & 0.982 & 0.955 ($-$0.026$^{*}$) & 0.944 ($-$0.037$^{*}$) & 0.950 ($-$0.032$^{*}$) & 0.983 (+0.002$^{*}$) & 0.942 ($-$0.039$^{*}$) \\
+Transformer & TCP/IP DoS-UDP & 0.667 & 0.579 ($-$0.089$^{*}$) & 0.673 (+0.006) & 0.254 ($-$0.413$^{*}$) & 0.592 ($-$0.076$^{*}$) & 0.299 ($-$0.368$^{*}$) \\
+Transformer & MQTT-DDoS publish flooding & 0.116 & 0.297 (+0.181$^{*}$) & 0.158 (+0.042) & 0.238 (+0.123) & 0.507 (+0.391$^{*}$) & 0.208 (+0.092) \\
+\midrule
+BiLSTM-DNN & ARP spoofing & 0.857 & 0.975$^{\dagger}$ (+0.117$^{*}$) & 0.990$^{\dagger}$ (+0.133$^{*}$) & 0.995$^{\dagger}$ (+0.137$^{*}$) & 0.986 (+0.128$^{*}$) & 0.996 (+0.139$^{*}$) \\
+BiLSTM-DNN & Recon-VulScan & 0.728 & 0.851$^{\dagger}$ (+0.124$^{*}$) & 0.797$^{\dagger}$ (+0.069$^{*}$) & 0.792$^{\dagger}$ (+0.064) & 0.821 (+0.093$^{*}$) & 0.956 (+0.228$^{*}$) \\
+BiLSTM-DNN & Malformed MQTT traffic & 0.906 & 0.971$^{\dagger}$ (+0.065$^{*}$) & 0.967$^{\dagger}$ (+0.061$^{*}$) & 0.955$^{\dagger}$ (+0.050$^{*}$) & 0.960 (+0.055$^{*}$) & 0.990 (+0.085$^{*}$) \\
+BiLSTM-DNN & TCP/IP DoS-UDP & 0.665 & 0.743$^{\dagger}$ (+0.078) & 0.691$^{\dagger}$ (+0.026) & 0.484$^{\dagger}$ ($-$0.181$^{*}$) & 0.758 (+0.093$^{*}$) & 0.753 (+0.088) \\
+BiLSTM-DNN & MQTT-DDoS publish flooding & 0.334 & 0.442$^{\dagger}$ (+0.108) & 0.541$^{\dagger}$ (+0.207$^{*}$) & 0.520$^{\dagger}$ (+0.186$^{*}$) & 0.640 (+0.306$^{*}$) & 0.520 (+0.186$^{*}$) \\
+\bottomrule
+\end{tabular}
+}
+\par\smallskip{\footnotesize $^{\dagger}$ MSP tie share of 0.5 or more among the held-out or the known windows (share of windows whose MSP is exactly 1.0 in float32): 30 of 45 MSP cells; in these cells the larger of the two tie shares is 0.52 to 1.00. The Transformer has no marked cell (largest tie share 0.18). $^{*}$ The 95\% seed interval of the paired difference to the 19-class energy AUROC excludes zero. All cells are shown, including those that are not interpretable.}
+\end{table}
