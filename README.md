@@ -4,7 +4,7 @@ Companion repository of the manuscript "Unseen-Attack Detection in the Internet 
 
 ## Source map of the manuscript
 
-Every table and figure of the manuscript (Tables 1 to 20, Figures 1 to 5; the former supplementary material is now part of the manuscript) is listed below with its source file(s) in this repository and the script that produced them. The raw data are at the CIC repository (see Dataset below); the model files and the large per-window exports are not included because of their size. `Manuscript.pdf` is the final 22-page manuscript. The folder `supplementary_material/` holds the earlier stand-alone supplement (before it was merged into the manuscript) and is kept for the record.
+Every table and figure of the manuscript (Tables 1 to 20, Figures 1 to 5; the former supplementary material is now part of the manuscript) is listed below with its source file(s) in this repository and the script that produced them. The raw data are at the CIC repository (see Dataset below); the model files and the large per-window exports are not included because of their size. `Manuscript.pdf` is the final 22-page manuscript.
 
 | Manuscript item | Source file(s) | Script |
 |---|---|---|
@@ -50,9 +50,8 @@ TRACE-MoE (a mixture-of-experts sequence model), a Transformer and a BiLSTM-DNN 
 | `figures_v6/` | redrawn figures 1 to 5 of the final manuscript (PDF) and their report |
 | `figures/` | figures of the manuscript and their source files (`fig1` to `fig4` and `fig_y_h5`, PDF and PNG; `architecture_schematic.png` is the architecture figure) |
 | `Manuscript.pdf` | the final manuscript (22 pages) |
-| `supplementary_analyses/` | post hoc exploratory analyses with a README each (see `SUPPLEMENTARY_ANALYSES.md`) |
+| `supplementary_analyses/` | source data of the tables of the manuscript that were formerly supplementary (Tables 1, 2, 4, 5, 8, 11 to 20) and other post hoc exploratory analyses with a README each (see `SUPPLEMENTARY_ANALYSES.md`) |
 | `scripts_supplementary/` | scripts of the supplementary analyses (and the score-export script they read) |
-| `supplementary_material/` | the earlier stand-alone supplement (Overleaf project v4b), now merged into the manuscript; kept for the record |
 | `ANALYSIS_PLAN.md` | hypotheses, decision rules and timeline of the analysis plan |
 | `TRACEABILITY.md` | table-by-table and figure-by-figure source map, check results, reference list |
 | `graphical_abstract.png`, `graphical_abstract.pdf` | graphical abstract |
