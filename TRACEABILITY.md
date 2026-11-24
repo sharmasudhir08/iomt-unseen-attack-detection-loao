@@ -2,7 +2,16 @@
 
 Manuscript: "Unseen-Attack Detection in the Internet of Medical Things: A Leave-One-Attack-Out Evaluation of Sequence Models, Energy Scores and Feature-Space Profiles".
 
-## 1. Fingerprints
+## 0. Update of 24 November 2026
+
+The supplementary material was merged into the manuscript (22 pages). Table and figure numbers below that refer to Tables 1 to 5 or to Tables S1 to S15 are those of the earlier text; the current mapping to Tables 1 to 20 and Figures 1 to 5 is the table in `README.md`. Figures 1 to 5 were redrawn (`figures_v6/`). Values were not changed except that the Transformer ECE of Table 15 is 0.0070 (exact mean 0.007045).
+
+| File | SHA-256 |
+|---|---|
+| `Manuscript.pdf` (final, 22 pages) | `433e58b85fc023937ac141db411da027ec293447ebd250ace0a85af7949e75e7` |
+| Source archive v6c (not in this repository) | `9a079c5e08f2353b94e369f77e0926a02f73172440a1372d1ca8ad3ad17d7cf0` |
+
+## 1. Fingerprints (22 November text)
 
 | File | SHA-256 |
 |---|---|

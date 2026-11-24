@@ -1,5 +1,7 @@
 # Supplementary exploratory analyses (post hoc, 21 November 2026)
 
+Note (24 November 2026): the supplementary tables and figures named below as S-items are now Tables 1, 2, 4, 5, 8, 11 to 20 and Figures 3 to 5 of the manuscript; see the table in `README.md`.
+
 All analyses read saved model outputs (T3 loads the saved models for inference only); none trains a model and none changes a verdict of H1 to H5. Each folder has a README with the command, the script SHA-256, the inputs and the checks.
 
 | Folder | Content |
